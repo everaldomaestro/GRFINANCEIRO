@@ -80,6 +80,7 @@
             this.beneficiárioToolStripMenuItem.Name = "beneficiárioToolStripMenuItem";
             this.beneficiárioToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.beneficiárioToolStripMenuItem.Text = "Beneficiário";
+            this.beneficiárioToolStripMenuItem.Click += new System.EventHandler(this.beneficiárioToolStripMenuItem_Click);
             // 
             // pagadorToolStripMenuItem
             // 
@@ -129,9 +130,12 @@
             this.ClientSize = new System.Drawing.Size(636, 575);
             this.Controls.Add(this.statusPrincipal);
             this.Controls.Add(this.menuPrincipal);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmPrincipal";
             this.Text = "Gerenciador Financeiro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.ResumeLayout(false);

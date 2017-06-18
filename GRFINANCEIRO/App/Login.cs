@@ -22,6 +22,7 @@ namespace App
         {
             frmPrincipal formPrincipal = new frmPrincipal();
             formPrincipal.Show();
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
