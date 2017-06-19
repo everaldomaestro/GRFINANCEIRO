@@ -23,9 +23,63 @@ namespace App.Forms
             InitializeComponent();
         }
 
-        private void frmCadastrosPai_FormClosing(object sender, FormClosingEventArgs e)
+        protected virtual void frmCadastrosPai_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Close();
+        }
+
+        protected virtual void frmCadastrosPai_Load(object sender, EventArgs e)
+        {
+            btnInsert.Enabled = true;
+            btnGravar.Enabled = false;
+            btnEditar.Enabled = true;
+            btnDeletar.Enabled = true;
+            btnCancelar.Enabled = false;
+        }
+
+        protected virtual void btnInsert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnGravar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnDeletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnPrimeiro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnProximo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnAnterior_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnUltimo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

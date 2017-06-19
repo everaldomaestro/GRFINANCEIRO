@@ -8,10 +8,10 @@ namespace Domain
 {
     public class Conexao
     {
-        private static string _MSSQLServer = "X";
-        private static string _MSSQLPort = "X";
-        private static string _MSSQLUser = "X";
-        private static string _MSSQLPass = "X";
+        private static string _MSSQLServer = "TI";
+        private static string _MSSQLPort = "1433";
+        private static string _MSSQLUser = "sa";
+        private static string _MSSQLPass = "abc.123";
 
         public static string MSSQLServer { get => _MSSQLServer; set => _MSSQLServer = value; }
         public static string MSSQLPort { get => _MSSQLPort; set => _MSSQLPort = value; }
