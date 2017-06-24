@@ -45,10 +45,13 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.tpConsultar = new System.Windows.Forms.TabPage();
+            this.dgView = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tpCadastro.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.SuspendLayout();
             // 
             // status
@@ -146,6 +149,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgView);
             this.groupBox1.Location = new System.Drawing.Point(6, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(550, 204);
@@ -225,6 +229,14 @@
             this.tpConsultar.Text = "Consulta";
             this.tpConsultar.UseVisualStyleBackColor = true;
             // 
+            // dgView
+            // 
+            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView.Location = new System.Drawing.Point(6, 19);
+            this.dgView.Name = "dgView";
+            this.dgView.Size = new System.Drawing.Size(538, 179);
+            this.dgView.TabIndex = 0;
+            // 
             // frmCadastrosPai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,7 +254,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tpCadastro.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +281,6 @@
         protected System.Windows.Forms.Button btnAnterior;
         protected System.Windows.Forms.Button btnPrimeiro;
         protected System.Windows.Forms.GroupBox groupBox2;
+        protected System.Windows.Forms.DataGridView dgView;
     }
 }

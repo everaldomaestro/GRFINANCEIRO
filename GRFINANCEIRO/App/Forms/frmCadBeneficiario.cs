@@ -10,115 +10,75 @@ using System.Data.SqlClient;
 
 namespace App.Forms
 {
-    public partial class frmCadBeneficiario : App.Forms.frmCadastrosPai
+    public partial class frmCadBeneficiario : frmCadastrosPai
     {
         public frmCadBeneficiario()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
-        protected override void btnInsert_Click(object sender, EventArgs e)
-        {
-            ativaControles(false);
-            dgView.AllowUserToAddRows = true;
-            MessageBox.Show( dgView.RowCount.ToString());
-            dgView[dgView.CurrentCell.ColumnIndex ,dgView.CurrentCell.RowIndex].Selected = false;
-            
-        }
-
-        protected override void btnGravar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected override void btnEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected override void btnDeletar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected override void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected override void btnPrimeiro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected override void btnProximo_Click(object sender, EventArgs e)
-        {
-            CurrencyManager cm = (CurrencyManager)this.BindingContext[dsView, "BENEFICIARIO"];
-            if (cm.Position < cm.Count - 1)
-            {
-                cm.Position++;
-            }
-        }
-
-        protected override void btnAnterior_Click(object sender, EventArgs e)
-        {
-            if (this.BindingContext[dsView, "BENEFICIARIO"].Position > 0)
-            {
-                this.BindingContext[dsView, "BENEFICIARIO"].Position--;
-            }
-        }
-
-        protected override void btnUltimo_Click(object sender, EventArgs e)
-        {
-
-        }
+        private static string tbl = "BENEFICIARIO";
 
         private void frmCadBeneficiario_Load(object sender, EventArgs e)
         {
-            Conexao conBeneficiario = new Conexao();
+            Conexao con = new Conexao();
 
-            SqlCon = new SqlConnection(conBeneficiario.GetSQLStringCon());
-            ds = new DataSet("Beneficiario");
+            SqlCon = new SqlConnection(con.GetSQLStringCon());
+            ds = new DataSet(tbl);
 
-            SqlDataAdapter selBeneficiario = new SqlDataAdapter
-                ("SELECT * FROM BENEFICIARIO", SqlCon);
+            SqlDataAdapter daTbl = new SqlDataAdapter
+                ("SELECT * FROM "+tbl+"", SqlCon);
 
-            selBeneficiario.TableMappings.Add("Table", "BENEFICIARIO");
-            selBeneficiario.Fill(ds);
+            daTbl.TableMappings.Add("Table", tbl);
+            daTbl.Fill(ds);
 
             dsView = ds.DefaultViewManager;
 
             dgView.DataSource = dsView;
-            dgView.DataMember = "Beneficiario";
+            dgView.DataMember = tbl;
+            dgView.AllowUserToAddRows = false;
+
+            //Linkando os controles-tabela
             dgView.Columns[0].HeaderText = "ID";
             dgView.Columns[0].Visible = false;
             dgView.Columns[1].HeaderText = "CNPJ/CPF";
             dgView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgView.Columns[2].HeaderText = "RAZÃO SOCIAL";
             dgView.Columns[3].HeaderText = "APELIDO";
-            
-            dgView[1, 0].Selected = true;
-            //dgView.EditMode = DataGridViewEditMode.EditOnEnter;
 
-            tbCNPJCPF.DataBindings.Add("Text", dsView, "BENEFICIARIO.BENEFICIARIO_CNPJCPF");
-            tbNOMEFAN.DataBindings.Add("Text", dsView, "BENEFICIARIO.BENEFICIARIO_NOMEFAN");
-            tbRAZAO.DataBindings.Add("Text", dsView, "BENEFICIARIO.BENEFICIARIO_RAZAOSOC");
+            tbCNPJCPF.DataBindings.Add("Text", dsView, tbl + ".BENEFICIARIO_CNPJCPF");
+            tbNOMEFAN.DataBindings.Add("Text", dsView, tbl + ".BENEFICIARIO_NOMEFAN");
+            tbRAZAO.DataBindings.Add("Text", dsView, tbl + ".BENEFICIARIO_RAZAOSOC");
 
             ativaControles(true);
         }
 
-        private void ativaControles(bool cmd)
+        protected override void btnPrimeiro_Click(object sender, EventArgs e)
         {
-            dgView.AllowUserToAddRows = !cmd;
-            dgView.ReadOnly = cmd;
+            this.BindingContext[dsView, tbl].Position = 0;
+        }
 
-            foreach (Control c in groupBox2.Controls)
+        protected override void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (this.BindingContext[dsView, tbl].Position > 0)
             {
-                if(c is TextBox)
-                {
-                    (c as TextBox).ReadOnly = cmd;
-                }
+                this.BindingContext[dsView, tbl].Position--;
             }
+        }
+
+        protected override void btnProximo_Click(object sender, EventArgs e)
+        {
+            CurrencyManager cm = (CurrencyManager)this.BindingContext[dsView, tbl];
+            if (cm.Position < cm.Count - 1)
+            {
+                cm.Position++;
+            }
+        }
+
+        protected override void btnUltimo_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[dsView, tbl].Position = 
+                this.BindingContext[dsView, tbl].Count;
         }
     }
 }

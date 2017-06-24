@@ -25,8 +25,8 @@ namespace App.Forms
 
         private void beneficiárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadBeneficiario formCadBeneficiario = new frmCadBeneficiario();
-            formCadBeneficiario.Show();
+            //frmCadBeneficiario formCadBeneficiario = new frmCadBeneficiario();
+            //formCadBeneficiario.Show();
         }
     }
 }

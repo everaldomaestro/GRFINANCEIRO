@@ -81,5 +81,20 @@ namespace App.Forms
         {
 
         }
+
+        protected void ativaControles(bool cmd)
+        {
+            dgView.AllowUserToAddRows = !cmd;
+            dgView.ReadOnly = cmd;
+
+            foreach (Control c in groupBox2.Controls)
+            {
+                if (c is TextBox)
+                {
+                    (c as TextBox).ReadOnly = cmd;
+                }
+            }
+
+        }
     }
 }
