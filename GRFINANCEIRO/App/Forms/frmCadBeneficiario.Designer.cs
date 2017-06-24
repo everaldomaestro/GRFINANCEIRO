@@ -44,6 +44,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
             // tpCadastro
             // 
             this.tpCadastro.Size = new System.Drawing.Size(566, 452);
@@ -58,13 +62,45 @@
             // 
             this.tabControl1.Size = new System.Drawing.Size(574, 478);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
             // tpConsultar
             // 
-            this.tpConsultar.Size = new System.Drawing.Size(566, 396);
+            this.tpConsultar.Size = new System.Drawing.Size(566, 452);
             // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(6, 397);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnPrimeiro
+            // 
+            this.btnPrimeiro.Click += new System.EventHandler(this.btnPrimeiro_Click);
             // 
             // groupBox2
             // 
@@ -140,6 +176,7 @@
             this.ClientSize = new System.Drawing.Size(574, 503);
             this.Name = "frmCadBeneficiario";
             this.Text = "Cadastro de Beneficiário";
+            this.Load += new System.EventHandler(this.frmCadBeneficiario_Load);
             this.tpCadastro.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);

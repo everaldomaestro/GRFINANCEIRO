@@ -20,8 +20,10 @@ namespace App
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            frmPrincipal formPrincipal = new frmPrincipal();
-            formPrincipal.Show();
+            frmCadBeneficiario f = new frmCadBeneficiario();
+            f.Show();
+            //frmPrincipal formPrincipal = new frmPrincipal();
+            //formPrincipal.Show();
             this.Hide();
         }
 

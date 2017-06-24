@@ -67,12 +67,12 @@ namespace App.Forms
 
         }
 
-        protected virtual void btnProximo_Click(object sender, EventArgs e)
+        protected virtual void btnAnterior_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected virtual void btnAnterior_Click(object sender, EventArgs e)
+        protected virtual void btnProximo_Click(object sender, EventArgs e)
         {
 
         }

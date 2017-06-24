@@ -34,8 +34,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnUltimo = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPrimeiro = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -96,8 +96,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnUltimo);
-            this.panel2.Controls.Add(this.btnAnterior);
             this.panel2.Controls.Add(this.btnProximo);
+            this.panel2.Controls.Add(this.btnAnterior);
             this.panel2.Controls.Add(this.btnPrimeiro);
             this.panel2.Location = new System.Drawing.Point(6, 413);
             this.panel2.Name = "panel2";
@@ -114,25 +114,25 @@
             this.btnUltimo.UseVisualStyleBackColor = true;
             this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
-            // btnAnterior
-            // 
-            this.btnAnterior.Location = new System.Drawing.Point(270, 12);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(105, 30);
-            this.btnAnterior.TabIndex = 2;
-            this.btnAnterior.Text = ">";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(159, 12);
+            this.btnProximo.Location = new System.Drawing.Point(270, 12);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(105, 30);
-            this.btnProximo.TabIndex = 1;
-            this.btnProximo.Text = "<";
+            this.btnProximo.TabIndex = 2;
+            this.btnProximo.Text = ">";
             this.btnProximo.UseVisualStyleBackColor = true;
-            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
+            this.btnProximo.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(159, 12);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(105, 30);
+            this.btnAnterior.TabIndex = 1;
+            this.btnAnterior.Text = "<";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnPrimeiro
             // 
@@ -263,8 +263,8 @@
         protected System.Windows.Forms.TabPage tpConsultar;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Button btnUltimo;
-        protected System.Windows.Forms.Button btnAnterior;
         protected System.Windows.Forms.Button btnProximo;
+        protected System.Windows.Forms.Button btnAnterior;
         protected System.Windows.Forms.Button btnPrimeiro;
         protected System.Windows.Forms.GroupBox groupBox2;
     }
